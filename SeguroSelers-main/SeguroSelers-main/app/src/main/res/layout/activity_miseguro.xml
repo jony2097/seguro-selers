@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/miseguroLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F8FC">
+
+    <!-- Header azul -->
+    <View
+        android:id="@+id/header"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:background="@color/primaryDark"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Flecha y título -->
+    <ImageView
+        android:id="@+id/backArrow"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ivolver"
+        app:layout_constraintTop_toTopOf="@id/header"
+        app:layout_constraintBottom_toBottomOf="@id/header"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp"/>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Seguro Contratado"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@id/header"
+        app:layout_constraintBottom_toBottomOf="@id/header"
+        app:layout_constraintStart_toEndOf="@id/backArrow"
+        android:layout_marginStart="12dp"/>
+
+    <!-- Contenedor para el mensaje de "No hay seguros" -->
+    <TextView
+        android:id="@+id/noInsuranceMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Actualmente no tienes pólizas contratadas."
+        android:textColor="#666666"
+        android:textSize="16sp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/header"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"/>
+
+    <!-- Contenedor para el seguro contratado (visible cuando hay un seguro) -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/insuranceCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        app:layout_constraintTop_toBottomOf="@id/header"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <!-- Icono y categoría del seguro -->
+            <ImageView
+                android:id="@+id/insuranceIcon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@android:drawable/ic_menu_info_details"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/insuranceCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MOTOCICLETA"
+                android:textColor="#003087"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="@id/insuranceIcon"
+                app:layout_constraintStart_toEndOf="@id/insuranceIcon"
+                android:layout_marginStart="12dp"/>
+
+            <TextView
+                android:id="@+id/insuranceStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mi seguro"
+                android:textColor="#003087"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/insuranceIcon"
+                app:layout_constraintStart_toEndOf="@id/insuranceIcon"
+                android:layout_marginStart="12dp"/>
+
+            <!-- Detalles del seguro -->
+            <TextView
+                android:id="@+id/insuranceDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Plan: Plan Parcial\nPatente: ABC 123\nVigencia hasta 05/2026\nNúmero de póliza: 1234567890"
+                android:textColor="#666666"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@id/insuranceIcon"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="12dp"/>
+
+            <!-- Botón "Dar de baja" -->
+            <Button
+                android:id="@+id/cancelInsuranceButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dar de baja"
+                android:textColor="#FF0000"
+                android:background="@android:color/transparent"
+                app:layout_constraintTop_toBottomOf="@id/insuranceDetails"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="12dp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

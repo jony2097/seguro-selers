@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/miseguroLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F8FC">
+
+    <!-- Header azul -->
+    <View
+        android:id="@+id/header"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:background="@color/primaryDark"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Flecha y título -->
+    <ImageView
+        android:id="@+id/backArrow"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        app:layout_constraintTop_toTopOf="@id/header"
+        app:layout_constraintBottom_toBottomOf="@id/header"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp"/>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Confirmar"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@id/header"
+        app:layout_constraintBottom_toBottomOf="@id/header"
+        app:layout_constraintStart_toEndOf="@id/backArrow"
+        android:layout_marginStart="12dp"/>
+
+    <!-- Indicador de progreso -->
+    <!-- Indicador de pasos con puntos (Paso 3 de 3) -->
+    <LinearLayout
+        android:id="@+id/progressDots"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/header"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <View
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_margin="6dp"
+            android:background="@drawable/doc_active" />
+
+        <View
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_margin="6dp"
+            android:background="@drawable/doc_active" />
+
+        <View
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_margin="6dp"
+            android:background="@drawable/doc_active" />
+    </LinearLayout>
+
+    <!-- Texto de instrucción -->
+    <TextView
+        android:id="@+id/instruction"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Chequeá que los datos sean correctos"
+        android:textColor="#333"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/progressDots"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"/>
+
+    <!-- Campos de datos -->
+
+    <!-- Botones -->
+    <LinearLayout
+        android:id="@+id/formContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/instruction">
+
+        <!-- Tipo de Vehículo -->
+        <include
+            android:id="@+id/cardTipoVehiculo"
+            layout="@layout/card_item_dato" />
+
+        <!-- Datos Vehículo (marca, modelo, año) -->
+        <include
+            android:id="@+id/cardDatosVehiculo"
+            layout="@layout/card_item_dato" />
+
+        <!-- Patente -->
+        <include
+            android:id="@+id/cardPatente"
+            layout="@layout/card_item_dato" />
+
+        <!-- Fecha -->
+        <include
+            android:id="@+id/cardFecha"
+            layout="@layout/card_item_dato" />
+
+        <!-- Hora -->
+        <include
+            android:id="@+id/cardHora"
+            layout="@layout/card_item_dato" />
+
+        <!-- Ubicación -->
+        <include
+            android:id="@+id/cardUbicacion"
+            layout="@layout/card_item_dato" />
+
+        <!-- Descripción -->
+        <include
+            android:id="@+id/cardDescripcion"
+            layout="@layout/card_item_dato" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/buttonContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <Button
+            android:id="@+id/btnCancelar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="CANCELAR"
+            android:backgroundTint="@android:color/white"
+            android:textColor="@color/primaryDark"
+          />
+
+        <Button
+            android:id="@+id/btnGuardar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="GUARDAR"
+            android:backgroundTint="@color/primaryDark"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

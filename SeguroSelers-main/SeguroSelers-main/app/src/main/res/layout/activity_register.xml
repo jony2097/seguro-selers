@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingBottom="24dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="400dp"
+            android:layout_height="180dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            app:cardCornerRadius="40dp"
+            app:cardElevation="0dp"
+            app:cardPreventCornerOverlap="false"
+            app:cardUseCompatPadding="false">
+
+            <ImageView
+                android:id="@+id/header_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/fondoregistro" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="Hola,\nPrimera vez en"
+            android:textColor="@color/primaryLight"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="Seguros Selers?"
+            android:textColor="@color/primaryDark"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="Protegé tu vehículo mientras trabajás.\nRegistrate gratis y gestioná tu seguro sin complicaciones."
+            android:textColor="@color/gray"
+            android:textSize="14sp" />
+
+        <!-- Campos -->
+        <EditText
+            android:id="@+id/nombre_input"
+            android:layout_width="300dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="30dp"
+            android:hint="Nombre."
+            android:background="@drawable/rounded_edittext"
+            android:paddingStart="16dp"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/apellido_input"
+            android:layout_width="300dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:hint="Apellido."
+            android:background="@drawable/rounded_edittext"
+            android:paddingStart="16dp" />
+
+        <EditText
+            android:id="@+id/correo_input"
+            android:layout_width="300dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:hint="Correo."
+            android:inputType="textEmailAddress"
+            android:background="@drawable/rounded_edittext"
+            android:paddingStart="16dp" />
+
+        <!-- Contenedor para Contraseña con ojo -->
+        <RelativeLayout
+            android:layout_width="300dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_edittext">
+
+            <EditText
+                android:id="@+id/contraseña_input"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Contraseña."
+                android:inputType="textPassword"
+                android:paddingStart="16dp"
+                android:paddingEnd="40dp"
+                android:background="@android:color/transparent" />
+
+            <ImageView
+                android:id="@+id/show_password"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="12dp"
+                android:src="@drawable/iconoojo"
+                android:contentDescription="Mostrar contraseña" />
+        </RelativeLayout>
+
+        <!-- Contenedor para Confirmar Contraseña con ojo -->
+        <RelativeLayout
+            android:layout_width="300dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_edittext">
+
+            <EditText
+                android:id="@+id/confirmar_contraseña_input"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Confirmar Contraseña."
+                android:inputType="textPassword"
+                android:paddingStart="16dp"
+                android:paddingEnd="40dp"
+                android:background="@android:color/transparent" />
+
+            <ImageView
+                android:id="@+id/show_confirmar_password"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="12dp"
+                android:src="@drawable/iconoojo"
+                android:contentDescription="Mostrar contraseña" />
+        </RelativeLayout>
+
+        <!-- Botón -->
+        <Button
+            android:id="@+id/crear_cuenta_button"
+            android:layout_width="300dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="24dp"
+            android:text="CREAR CUENTA"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:background="@drawable/rounded_button" />
+
+        <!-- Link de registro -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="25dp"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/ir_a_logig_link"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¿Ya tenés una cuenta?,"
+                android:textColor="@color/gray" />
+
+            <TextView
+                android:id="@+id/ir_a_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Inicia sesión"
+                android:textColor="@color/primaryDark"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
